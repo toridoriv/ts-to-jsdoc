@@ -32,6 +32,6 @@
 		"no-console": ["warn", { "allow": ["warn", "error"] }]
 	},
 	"ignorePatterns": [
-		"test/test-project/**/*"
+		"test/test-project/**/*", "tmp/**/*"
 	]
 }
