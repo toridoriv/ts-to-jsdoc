@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "lib": ["ESNext"],
-    "module": "commonjs",
-    "target": "ES2015",
+    "module": "NodeNext",
+    "target": "ESNext",
+    "importHelpers": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
