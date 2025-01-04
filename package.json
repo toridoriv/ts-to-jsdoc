@@ -18,7 +18,7 @@
   "author": "futurGH",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "rm index.js bin/ts-to-jsdoc.js && tsc",
     "prepare": "npm run build",
     "test": "npm run build && jest"
   },
