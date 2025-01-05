@@ -5,8 +5,6 @@ logs
 npm-debug.log*
 
 # Transpilation results
-index.js
-bin/*.js
 test/test-project/dist/*.js
 
 # Dependency directories
