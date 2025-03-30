@@ -32,6 +32,6 @@
 		"no-console": ["warn", { "allow": ["warn", "error"] }]
 	},
 	"ignorePatterns": [
-		"test/test-project/**/*", "tmp/**/*"
+		"test/test-project/**/*", "tmp/**/*", "index.js", "bin/ts-to-jsdoc.js"
 	]
 }
