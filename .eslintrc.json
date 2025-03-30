@@ -20,7 +20,7 @@
 		"consistent-return": "off",
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
-		"max-len": ["warn", 100],
+		"max-len": ["warn", 120],
 		"no-continue": "off",
 		"no-param-reassign": "off",
 		"no-restricted-syntax": "off",
@@ -28,7 +28,8 @@
 		"no-unused-expressions": "off",
 		"no-use-before-define": "off",
 		"object-curly-spacing": ["error", "always"],
-		"quotes": ["error", "double"]
+		"quotes": ["error", "double"],
+		"no-console": ["warn", { "allow": ["warn", "error"] }]
 	},
 	"ignorePatterns": [
 		"test/test-project/**/*"
