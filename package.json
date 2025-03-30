@@ -45,5 +45,18 @@
     "index.js",
     "bin/ts-to-jsdoc",
     "bin/ts-to-jsdoc.js"
-  ]
+  ],
+  "overrides": {
+    "@typescript-eslint/eslint-plugin": {
+      "eslint": "$eslint",
+      "semver": "6.3.1"
+    },
+    "eslint-config-airbnb-base": {
+      "eslint": "$eslint",
+      "semver": "6.3.1"
+    },
+    "eslint-plugin-import": {
+      "eslint": "$eslint"
+    }
+  }
 }
