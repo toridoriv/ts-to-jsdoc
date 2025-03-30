@@ -1,4 +1,4 @@
-/** @typedef {import('./additional').Class} Class */
+/** @import { Class } from './additional' */
 import { func } from "./additional";
 /**
  * Description goes here
