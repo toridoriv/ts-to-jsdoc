@@ -47,6 +47,7 @@
     "bin/ts-to-jsdoc.js"
   ],
   "overrides": {
+    "@babel/traverse": "7.23.2",
     "braces": "3.0.3",
     "cross-spawn": "7.0.6",
     "micromatch": "4.0.8",
