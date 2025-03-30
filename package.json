@@ -49,6 +49,7 @@
   "overrides": {
     "braces": "3.0.3",
     "cross-spawn": "7.0.6",
+    "micromatch": "4.0.8",
     "@typescript-eslint/eslint-plugin": {
       "eslint": "$eslint",
       "semver": "6.3.1"
