@@ -51,6 +51,9 @@ interface MajorMinorVersion {
 	minor: number;
 }
 
+function coerce<T>(value: unknown): T {
+	return value as T;
+}
 const tsVersionMajorMinor = (() => {
 	try {
 		// eslint-disable-next-line import/no-extraneous-dependencies, global-require
@@ -61,7 +64,7 @@ const tsVersionMajorMinor = (() => {
 })();
 
 function parseTsVersion(majorMinor: string): MajorMinorVersion {
-	const [major, minor] = majorMinor.split(".").map((v) => parseInt(v));
+	const [major, minor] = majorMinor.split(".").map((v) => parseInt(v, 10));
 	return { major, minor };
 }
 
@@ -146,7 +149,13 @@ function generateImportDeclarationDocumentationViaTypedef(
 		const aliasNode = namedImport.getAliasNode();
 		const alias = aliasNode?.getText() || name;
 
-		if (declarationIsTypeOnly || namedImport.isTypeOnly() || nodeIsOnlyUsedInTypePosition(aliasNode || namedImport.getNameNode())) {
+		if (
+			declarationIsTypeOnly
+			|| namedImport.isTypeOnly()
+			|| nodeIsOnlyUsedInTypePosition(
+				coerce<Node & ReferenceFindableNode>(aliasNode || namedImport.getNameNode()),
+			)
+		) {
 			typedefs += `/** @typedef {import('${moduleSpecifier}').${name}} ${alias} */\n`;
 		}
 	}
@@ -178,7 +187,8 @@ function generateImportDeclarationDocumentationViaImportTag(
 		const name = namedImport.getName();
 		const aliasNode = namedImport.getAliasNode();
 		const alias = aliasNode?.getText();
-		if (declarationIsTypeOnly || namedImport.isTypeOnly() || nodeIsOnlyUsedInTypePosition(aliasNode || namedImport.getNameNode())) {
+		if (declarationIsTypeOnly || namedImport.isTypeOnly()
+			|| nodeIsOnlyUsedInTypePosition(coerce(aliasNode || namedImport.getNameNode()))) {
 			if (alias !== undefined) {
 				imports.named.push(`${name} as ${alias}`);
 			} else {
