@@ -47,6 +47,7 @@
     "bin/ts-to-jsdoc.js"
   ],
   "overrides": {
+    "cross-spawn": "7.0.6",
     "@typescript-eslint/eslint-plugin": {
       "eslint": "$eslint",
       "semver": "6.3.1"
